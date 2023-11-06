@@ -1,7 +1,16 @@
-function getFullName(firstname: string, surname: string): string {
-    return `${firstname} ${surname}`
+function getFullName(userEntity: {firstname: string, surname: string}): string {
+    return `${userEntity.firstname} ${userEntity.surname}`
 }
 
-const getFullNameArrow = (firstname: string, surname: string): string => `${firstname} ${surname}`
+const user = {
+    firstname: 'Alex',
+    surname: 'Green',
+    city: 'SPB',
+    age: 25,
+    skills: {
+        dev: true,
+        frontEnd: true
+    }
+};
 
-console.log('Биба', 'Боба');
+console.log(getFullName(user));
