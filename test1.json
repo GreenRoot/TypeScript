@@ -1,0 +1,11 @@
+{
+  "officeId": 45,
+  "isOpen": false,
+  "contacts": {
+    "phone": "+79992492222",
+    "email": "1oooooo@bk.ru",
+    "address": {
+      "city": "SPB"
+    }
+  }
+}

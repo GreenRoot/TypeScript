@@ -1,16 +1,21 @@
-function getFullName(userEntity: {firstname: string, surname: string}): string {
-    return `${userEntity.firstname} ${userEntity.surname}`
-}
-
-const user = {
-    firstname: 'Alex',
-    surname: 'Green',
-    city: 'SPB',
-    age: 25,
-    skills: {
-        dev: true,
-        frontEnd: true
+let info: {
+    "officeId": number;
+    "isOpen": boolean;
+    "contacts": {
+        "phone": string;
+        "email": string;
+        "address": {
+            "city": string
+        }
     }
-};
-
-console.log(getFullName(user));
+} = {
+    "officeId": 45,
+    "isOpen": false,
+    "contacts": {
+        "phone": "+79992492222",
+        "email": "1oooooo@bk.ru",
+        "address": {
+            "city": "SPB"
+        }
+    }
+}
