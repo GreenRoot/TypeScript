@@ -1,9 +1,19 @@
-enum StatusCode {
-    SUCCESS ,
-    IN_PROGRESS ,
-    FAILED
+enum QuestionStatus {
+    DRAFT = 'draft',
+    DELETED = 'deleted',
+    PUBLISHED = 'published'
 }
-const res= {
-    message: 'Платёж успешен',
-    statusCode: StatusCode.SUCCESS
+async function getFaqs(req: {topicId: number, status?: QuestionStatus}): Promise<{
+    question: string,
+    answer: string,
+    tags: string[],
+    likes: number,
+    status: QuestionStatus
+}[]> {
+    const res = await fetch('/faqs', {
+        method: "POST",
+        body: JSON.stringify(req)
+    });
+    const data = await res.json();
+    return data
 }
